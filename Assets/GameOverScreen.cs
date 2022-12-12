@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public GameObject gameOverScreen;
+
     private void OnEnable()
     {
         PlayerHealth.OnPlayerDeath += EnableGameOverScreen;
@@ -19,7 +20,7 @@ public class GameOverScreen : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
     public void RestartButton() {
-        SceneManager.LoadScene("frog test");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ExitButton() {
         SceneManager.LoadScene("menu");
