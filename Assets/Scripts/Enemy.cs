@@ -4,9 +4,34 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
+    public Animator animator;
     public float speed = 3f;
     public Transform target;
+    //enemy health stuff
+    public int maxHealth = 100;
+    int currentHealth;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        //play hurt animation
+        animator.SetTrigger("Hurt");
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        animator.SetBool("IsDead", true);
+        
+        Destroy(gameObject);
+    }
 
     private void Update() {
         if (target != null){

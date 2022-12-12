@@ -20,6 +20,7 @@ public class GameOverScreen : MonoBehaviour
         gameOverScreen.SetActive(true);
     }
     public void RestartButton() {
+        GameManager.manager.playerHealth = GameManager.manager.playerMaxHealth;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ExitButton() {

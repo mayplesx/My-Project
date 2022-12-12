@@ -3109,6 +3109,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141841933}
   m_CullTransparentMesh: 1
+--- !u!1 &1147815737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147815738}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147815738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147815737}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.62, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900245257}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168254287
 GameObject:
   m_ObjectHideFlags: 0
@@ -34032,7 +34063,7 @@ GameObject:
   - component: {fileID: 1714472386}
   - component: {fileID: 1714472388}
   - component: {fileID: 1714472389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34119,7 +34150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714472381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.85, y: 0.13, z: 0}
+  m_LocalPosition: {x: 0.83, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34191,8 +34222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dc083131c6deb43bf12bef6ca73e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1714472382}
   speed: 2
-  target: {fileID: 0}
+  target: {fileID: 1714472384}
+  maxHealth: 100
 --- !u!1 &1804460543
 GameObject:
   m_ObjectHideFlags: 0
@@ -36584,6 +36617,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyscoreText: {fileID: 1053934631}
+--- !u!114 &1900245270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283806220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ba88e29c7977a41b8ed797150c6ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1900245271}
+  attackPoint: {fileID: 1900245257}
+  attackRange: 0.68
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  attackDamage: 20
+  attackRate: 2
+--- !u!95 &1900245271 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6046475853949087148, guid: 5f99e1460c7d0ac43b4512ab06f766ca, type: 3}
+  m_PrefabInstance: {fileID: 6046475852594535592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1904606940
 GameObject:
   m_ObjectHideFlags: 0
