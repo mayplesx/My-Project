@@ -9,7 +9,6 @@ public class speedBoost : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            Debug.Log("Ouchie!");
             playerMovement = collider.gameObject.GetComponent<PlayerMovement>();
             playerMovement.UpdateSpeed(1);
              Destroy(gameObject);

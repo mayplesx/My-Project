@@ -36631,7 +36631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1900245271}
   attackPoint: {fileID: 1900245257}
-  attackRange: 0.68
+  attackRange: 0.2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
