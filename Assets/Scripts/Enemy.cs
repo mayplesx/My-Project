@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        Debug.Log("HURT");
         currentHealth -= damage;
  
         //play hurt animation
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
  
-    private void Update() {
+    public virtual void Update() {
         if (target != null){
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.position, step);
