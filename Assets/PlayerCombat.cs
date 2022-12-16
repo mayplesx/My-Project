@@ -14,7 +14,6 @@ public class PlayerCombat : MonoBehaviour
     float nextAttackTime = 0f;
 
       // Update is called once per frame
-      // v Cooldown for attack
     void Update()
     {
         if (Time.time >= nextAttackTime)
@@ -31,16 +30,12 @@ public class PlayerCombat : MonoBehaviour
     {
         //play an attack animation
         animator.SetTrigger("Attack");
-
         //detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
         //damage them
         foreach(Collider2D enemy in hitEnemies)
         {
-            if (enemy !=null){
-                    enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-            }
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
     void OnDrawGizmosSelected()
