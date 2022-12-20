@@ -1,4 +1,4 @@
-"Oh hello! You look a little green today. What do you need?"
+"Oh hello! You look a little green today. What do you need?" #speaker:Mayple
 * [Ribbit, ribbit.] ->ribbit
 * [hgrmmmszjmmzmmzmmz.] ->hgr
 * [vzzzz. vzzzzsm. bzb.] ->vzz

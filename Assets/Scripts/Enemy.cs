@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     {
         animator.SetBool("IsDead", true);
        
-        Destroy(gameObject);
+        Destroy(gameObject, .5f);
     }
  
     public virtual void Update() {

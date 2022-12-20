@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         if (horizontal != 0 && vertical !=0)
         {
             horizontal *= moveLimiter;
