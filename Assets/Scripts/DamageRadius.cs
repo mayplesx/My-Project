@@ -11,7 +11,6 @@ public class DamageRadius : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            animator.SetTrigger("Attack");
             playerHealth = collider.gameObject.GetComponent<PlayerHealth>();
             playerHealth.UpdateHealth(-8);
         }

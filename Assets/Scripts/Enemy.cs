@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public float speed = 3f;
     public Transform target;
+    //test
+    DetectionRadius detection;
     //enemy health stuff
     public int maxHealth = 100;
     int currentHealth;
@@ -14,10 +16,10 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        detection = gameObject.GetComponentInChildren<DetectionRadius>();
     }
     public void TakeDamage(int damage)
     {
-        Debug.Log("HURT");
         currentHealth -= damage;
  
         //play hurt animation
@@ -37,17 +39,9 @@ public class Enemy : MonoBehaviour
     public virtual void Update() {
         if (target != null){
             float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.tag == "Player"){
-            target = other.transform;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D other){
-        if (other.gameObject.tag == "Player"){
-            target = null;
+            if (detection.inRange){
+                transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            }
         }
     }
    
