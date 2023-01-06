@@ -10,9 +10,8 @@ public class Restore : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            Debug.Log("itai!");
             playerHealth = collider.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.UpdateHealth(1);
+            playerHealth.UpdateHealth(25);
             Destroy(gameObject);
         }
     }
