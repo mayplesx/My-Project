@@ -396,6 +396,7 @@
 "Assets/Scripts/Hazard.cs"
 "Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/MainMenu.cs"
+"Assets/Scripts/MonsterAttack.cs"
 "Assets/Scripts/PlayerCombat.cs"
 "Assets/Scripts/PlayerHealth.cs"
 "Assets/Scripts/PlayerMovement.cs"
